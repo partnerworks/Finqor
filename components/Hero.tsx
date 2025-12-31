@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-[1.1] mb-6 max-w-5xl tracking-tight text-left md:text-center">
             Real-Time FX Deal Aggregation <br className="hidden md:block" />
-            <span className="text-primary">for </span>
+            <span className="text-black">for </span>
             <span className="text-accent relative hand-underline">Every Bank</span>
           </h1>
           

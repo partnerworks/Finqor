@@ -58,7 +58,7 @@ export const Solutions: React.FC = () => {
               "Dynamic aggregation of tier-1 liquidity sources",
               "Sub-10ms distribution to all LOB channels",
               "Robust REST APIs for legacy & digital systems",
-              "Smart caching for 24/7 quote availability",
+              "Smart caching for 24 / 7 / 365 quote availability",
               "Client-specific segmentation and laddering"
             ]}
             ctaText="Request Technical Spec"
