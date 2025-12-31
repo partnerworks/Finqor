@@ -46,14 +46,14 @@ export const PlatformOverview: React.FC = () => {
               }
             ].map((item, i) => (
               <div key={i} className={`p-8 rounded-[2rem] border transition-all duration-300 ${item.highlight ? 'bg-accent border-accent text-white shadow-2xl shadow-accent/20 lg:scale-105' : 'bg-slate-900 border-slate-800 text-white'}`}>
-                <div className="flex justify-between items-start mb-10">
+                <div className="flex justify-between items-start mb-10 text-left">
                   <div className={`p-3 rounded-xl ${item.highlight ? 'bg-white/20' : 'bg-slate-800 text-slate-400'}`}>
                     {item.icon}
                   </div>
                   <span className={`text-xs font-mono font-bold ${item.highlight ? 'text-white/50' : 'text-slate-600'}`}>{item.step}</span>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className={`text-sm leading-relaxed ${item.highlight ? 'text-white/80' : 'text-slate-400 font-medium'}`}>{item.desc}</p>
+                <h3 className="text-xl font-bold mb-3 text-left">{item.title}</h3>
+                <p className={`text-sm leading-relaxed text-left ${item.highlight ? 'text-white/80' : 'text-slate-400 font-medium'}`}>{item.desc}</p>
               </div>
             ))}
           </div>

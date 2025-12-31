@@ -1,17 +1,17 @@
 
-import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { PlatformOverview } from './components/PlatformOverview';
-import { Solutions } from './components/Solutions';
-import { Features } from './components/Features';
-import { Differentiation } from './components/Differentiation';
-import { Proof } from './components/Proof';
-import { Team } from './components/Team';
-import { MarketFocus } from './components/MarketFocus';
-import { FAQ } from './components/FAQ';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
+import React from 'react';
+import { Navbar } from './components/Navbar.tsx';
+import { Hero } from './components/Hero.tsx';
+import { PlatformOverview } from './components/PlatformOverview.tsx';
+import { Solutions } from './components/Solutions.tsx';
+import { Features } from './components/Features.tsx';
+import { Differentiation } from './components/Differentiation.tsx';
+import { Proof } from './components/Proof.tsx';
+import { Team } from './components/Team.tsx';
+import { MarketFocus } from './components/MarketFocus.tsx';
+import { FAQ } from './components/FAQ.tsx';
+import { Contact } from './components/Contact.tsx';
+import { Footer } from './components/Footer.tsx';
 
 const App: React.FC = () => {
   return (

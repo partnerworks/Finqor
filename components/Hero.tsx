@@ -11,6 +11,7 @@ export const Hero: React.FC = () => {
   });
 
   useEffect(() => {
+    // 4 times a second = 250ms
     const interval = setInterval(() => {
       // Update price number 4 times a second
       setDynamicNum(`1.084${Math.floor(Math.random() * 9)}`);
@@ -40,7 +41,7 @@ export const Hero: React.FC = () => {
             Real-time deal aggregation
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-[1.1] mb-6 max-w-5xl tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-[1.1] mb-6 max-w-5xl tracking-tight text-left md:text-center">
             Real-Time FX Deal Aggregation <br className="hidden md:block" />
             <span className="text-accent">for Every Bank</span>
           </h1>
@@ -51,10 +52,10 @@ export const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-16 w-full sm:w-auto">
-            <a href="#contact" className="bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-accent shadow-2xl shadow-primary/20 transition-all duration-300 hover:-translate-y-1">
+            <a href="#contact" className="bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-accent shadow-2xl shadow-primary/20 transition-all duration-300 hover:-translate-y-1 text-center">
               Book a demo
             </a>
-            <a href="#solutions" className="bg-white border border-slate-200 text-slate-700 px-10 py-4 rounded-full font-bold hover:bg-slate-50 transition-all duration-300">
+            <a href="#solutions" className="bg-white border border-slate-200 text-slate-700 px-10 py-4 rounded-full font-bold hover:bg-slate-50 transition-all duration-300 text-center">
               View Solutions
             </a>
           </div>
