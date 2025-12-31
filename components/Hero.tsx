@@ -43,11 +43,12 @@ export const Hero: React.FC = () => {
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-[1.1] mb-6 max-w-5xl tracking-tight text-left md:text-center">
             Real-Time FX Deal Aggregation <br className="hidden md:block" />
-            <span className="text-accent">for Every Bank</span>
+            <span className="text-primary">for </span>
+            <span className="text-accent relative hand-underline">Every Bank</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-3xl leading-relaxed font-medium">
-            Bridging pricing, risk, and hedge execution across institutional workflows 24/7/365. 
+            Bridging pricing, risk, and hedge execution across institutional workflows 24 / 7 / 365. 
             Deploy mission-critical middleware in under 60 days.
           </p>
           

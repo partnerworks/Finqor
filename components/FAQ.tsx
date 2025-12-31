@@ -33,7 +33,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "How do cached rates work out of hours?",
-      answer: "Our engine maintains business continuity 24/7 by utilizing cached pricing and smart spread logic even when main market liquidity sources are thin, ensuring your customers always have access to a quote."
+      answer: "Our engine maintains business continuity 24 / 7 / 365 by utilizing cached pricing and smart spread logic even when main market liquidity sources are thin, ensuring your customers always have access to a quote."
     },
     {
       question: "What is the typical implementation timeline?",
@@ -49,7 +49,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "What is the SaaS model and support structure?",
-      answer: "We offer a flexible SaaS model with tiered support including 24/7 technical assistance and dedicated floor support expertise to ensure mission-critical stability."
+      answer: "We offer a flexible SaaS model with tiered support including 24 / 7 / 365 technical assistance and dedicated floor support expertise to ensure mission-critical stability."
     }
   ];
 
