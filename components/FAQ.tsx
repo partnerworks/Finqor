@@ -32,6 +32,10 @@ export const FAQ: React.FC = () => {
       answer: "1FXPD (One Foreign Exchange Price Distributor) is a real-time middleware layer that aggregates liquidity and distributes cached, high-frequency pricing sets to downstream retail and corporate channels via REST APIs."
     },
     {
+      question: "How does FinQor ensure cybersecurity and platform resilience?",
+      answer: "FinQor operates on a 'Security by Design' architecture. Our platform is hosted on Amazon Web Services (AWS), leveraging institutional-grade infrastructure with multi-region availability. We employ strict DevSecOps principles, integrating security into every stage of the development lifecycle through secure, automated CI/CD pipelines. This includes continuous vulnerability scanning, end-to-end encryption for data at rest and in transit, and robust identity management to meet the stringent requirements of Tier-1 financial institutions."
+    },
+    {
       question: "How do cached rates work out of hours?",
       answer: "Our engine maintains business continuity 24 / 7 / 365 by utilizing cached pricing and smart spread logic even when main market liquidity sources are thin, ensuring your customers always have access to a quote."
     },
