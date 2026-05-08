@@ -33,7 +33,7 @@ export const FAQ: React.FC = () => {
     },
     {
       question: "How does FinQor ensure cybersecurity and platform resilience?",
-      answer: "FinQor operates on a 'Security by Design' architecture. Our platform is hosted on Amazon Web Services (AWS), leveraging institutional-grade infrastructure with multi-region availability. We employ strict DevSecOps principles, integrating security into every stage of the development lifecycle through secure, automated CI/CD pipelines. This includes continuous vulnerability scanning, end-to-end encryption for data at rest and in transit, and robust identity management to meet the stringent requirements of Tier-1 financial institutions."
+      answer: "FinQor operates on a 'Security by Design' architecture. Our platform is natively hosted on Amazon Web Services (AWS) and has been developed following strict DevSecOps principles. We utilize secure, hardened CI/CD pipelines to integrate high-frequency security controls into every stage of the development lifecycle. This includes continuous automated vulnerability scanning, end-to-end encryption for all data states, and institutional-grade identity management to meet the stringent security protocols of global Tier-1 banks."
     },
     {
       question: "How do cached rates work out of hours?",

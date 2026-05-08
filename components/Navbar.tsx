@@ -48,17 +48,30 @@ export const Navbar: React.FC = () => {
             <a 
               href="#home" 
               onClick={(e) => handleNavClick(e, '#home')}
-              className="flex flex-col group transition-standard"
+              className="flex items-center group transition-standard"
             >
-              <div className="flex items-baseline">
-                <span className="text-xl md:text-2xl font-extrabold tracking-tighter text-primary leading-none">
-                  FinQor
-                </span>
-                <span className="text-accent font-bold text-[10px] md:text-xs uppercase tracking-[0.25em] ml-1.5 leading-none">
-                  Technologies
-                </span>
+              <img 
+                src="/FinQor_Logo.png" 
+                alt="FinQor Technologies" 
+                className="h-10 w-auto"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  // Fallback to text if the image is not yet uploaded
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement?.querySelector('.logo-text')?.classList.remove('hidden');
+                }}
+              />
+              <div className="logo-text hidden flex flex-col group transition-standard">
+                <div className="flex items-baseline">
+                  <span className="text-xl md:text-2xl font-extrabold tracking-tighter text-primary leading-none">
+                    FinQor
+                  </span>
+                  <span className="text-accent font-bold text-[10px] md:text-xs uppercase tracking-[0.25em] ml-1.5 leading-none">
+                    Technologies
+                  </span>
+                </div>
+                <div className="h-0.5 w-0 group-hover:w-full bg-accent transition-all duration-300 mt-1"></div>
               </div>
-              <div className="h-0.5 w-0 group-hover:w-full bg-accent transition-all duration-300 mt-1"></div>
             </a>
           </div>
 

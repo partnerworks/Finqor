@@ -25,10 +25,23 @@ export const Footer: React.FC = () => {
             <a 
               href="#home" 
               onClick={(e) => handleFooterClick(e, '#home')}
-              className="text-2xl font-bold tracking-tight text-primary hover:opacity-90 transition-opacity inline-flex items-baseline"
+              className="hover:opacity-90 transition-opacity inline-flex items-center"
             >
-              <span className="leading-none">FinQor</span>
-              <span className="text-accent ml-0.5 leading-none">Technologies</span>
+              <img 
+                src="/FinQor_Logo.png" 
+                alt="FinQor Technologies" 
+                className="h-8 w-auto"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.parentElement?.querySelector('.footer-logo-text');
+                  if (fallback) (fallback as HTMLElement).style.display = 'flex';
+                }}
+              />
+              <div className="footer-logo-text hidden text-2xl font-bold tracking-tight text-primary items-baseline">
+                <span className="leading-none">FinQor</span>
+                <span className="text-accent ml-0.5 leading-none">Technologies</span>
+              </div>
             </a>
             <p className="text-[13px] text-slate-500 mt-6 max-w-xs font-medium leading-relaxed">
               Innovative technology delivering disruptive, sustainable middleware solutions for institutional workflow transformation in MENA and Africa.

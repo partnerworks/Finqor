@@ -58,7 +58,7 @@ export const Differentiation: React.FC = () => {
         <div className="text-center mb-16">
           <div className="text-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-4">Market Advantage</div>
           <h2 className="text-4xl font-extrabold text-primary mb-6">Why Institutional Leaders Choose FinQor</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg font-medium">Bypassing legacy bottlenecks with agile, high-throughput middleware built for modern finance.</p>
+          <p className="text-slate-500 max-w-2xl mx-auto text-lg font-medium">Enterprise-wide, cross-asset deal flow—outperforming legacy systems at scale</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

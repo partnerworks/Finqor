@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 export const Hero: React.FC = () => {
-  const providers = ["J.P. Morgan", "Deutsche Bank", "Citigroup", "Barclays"];
+  const providers = ["Tier 1 Bank", "Tier 2 Bank", "Venue 1", "Liquidity Exchange 3"];
   const [dynamicNum, setDynamicNum] = useState('1.0842');
   const [nodes, setNodes] = useState({
     retail: 78,
@@ -42,13 +42,12 @@ export const Hero: React.FC = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-[1.1] mb-6 max-w-5xl tracking-tight text-left md:text-center">
-            Real-Time FX Deal Aggregation <br className="hidden md:block" />
-            <span className="text-black">for </span>
-            <span className="text-accent relative hand-underline">Every Bank</span>
+            One platform. Every asset. <br className="hidden md:block" />
+            <span className="text-accent relative">Real-time decisioning at scale</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-3xl leading-relaxed font-medium">
-            Bridging pricing, risk, and hedge execution across institutional workflows 24 / 7 / 365. 
+            Pricing, risk, and settlement—unified in real time, across assets.
             Deploy mission-critical middleware in under 60 days.
           </p>
           
@@ -92,8 +91,9 @@ export const Hero: React.FC = () => {
                   <div className="flex flex-col items-center justify-center p-6 bg-primary rounded-2xl border border-slate-800 shadow-xl relative overflow-hidden group">
                     <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="w-12 h-12 rounded-full border-4 border-accent border-t-transparent animate-spin mb-4 relative z-10"></div>
-                    <div className="text-xs font-bold text-white tracking-widest uppercase relative z-10">Processing Flow</div>
+                    <div className="text-[10px] font-bold text-white tracking-widest uppercase relative z-10 opacity-70">Microsecond Execution</div>
                     <div className="text-[28px] font-mono text-white mt-2 relative z-10 transition-all duration-500">{dynamicNum}</div>
+                    <div className="mt-2 py-0.5 px-2 bg-accent text-[8px] font-bold rounded text-white relative z-10">SUB-μs LATENCY</div>
                   </div>
 
                   <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 text-left">

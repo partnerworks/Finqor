@@ -1,7 +1,32 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 
 export const Contact: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate API call
+    console.log('Form Submitted:', formData);
+    setIsSubmitted(true);
+    // Reset form after delay
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({ name: '', company: '', email: '', message: '' });
+    }, 5000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name.toLowerCase()]: value }));
+  };
+
   return (
     <section id="contact" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,31 +74,71 @@ export const Contact: React.FC = () => {
             </div>
             
             {/* Form */}
-            <div className="p-8 md:p-12 lg:p-16">
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Name</label>
-                    <input type="text" placeholder="John Doe" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard" />
+            <div className="p-8 md:p-12 lg:p-16 relative">
+              {isSubmitted ? (
+                <div className="flex flex-col items-center justify-center h-full text-center py-10 animate-in fade-in zoom-in duration-500">
+                  <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
+                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-primary mb-2">Inquiry Sent Successfully</h3>
+                  <p className="text-slate-500 max-w-xs mx-auto">
+                    Thank you for your interest. A FinQor specialist will contact you within 24 hours.
+                  </p>
+                </div>
+              ) : (
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Name</label>
+                      <input 
+                        name="Name"
+                        type="text" 
+                        required
+                        placeholder="John Doe" 
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-slate-700 mb-2">Company</label>
+                      <input 
+                        name="Company"
+                        type="text" 
+                        required
+                        placeholder="Institutional Bank" 
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard" 
+                      />
+                    </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2">Company</label>
-                    <input type="text" placeholder="Institutional Bank" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard" />
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Work Email</label>
+                    <input 
+                      name="Email"
+                      type="email" 
+                      required
+                      placeholder="john@bank.com" 
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard" 
+                    />
                   </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">Work Email</label>
-                  <input type="email" placeholder="john@bank.com" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard" />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
-                  <textarea rows={4} placeholder="How can we help transform your workflow?" className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard resize-none"></textarea>
-                </div>
-                <button type="submit" className="w-full bg-accent text-white py-4 rounded-xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition-standard">
-                  Send Inquiry
-                </button>
-                <p className="text-center text-xs text-slate-400">By submitting this form, you agree to our privacy policy.</p>
-              </form>
+                  <div>
+                    <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
+                    <textarea 
+                      name="Message"
+                      rows={4} 
+                      required
+                      placeholder="How can we help transform your workflow?" 
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/10 transition-standard resize-none"
+                    ></textarea>
+                  </div>
+                  <button type="submit" className="w-full bg-accent text-white py-4 rounded-xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition-standard active:scale-[0.98]">
+                    Send Inquiry
+                  </button>
+                  <p className="text-center text-xs text-slate-400">By submitting this form, you agree to our privacy policy.</p>
+                </form>
+              )}
             </div>
           </div>
         </div>

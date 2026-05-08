@@ -9,9 +9,9 @@ export const PlatformOverview: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="text-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-4">Architecture</div>
           <h2 className="text-4xl font-extrabold text-white mb-6">Workflow Aggregation Middleware</h2>
-          <p className="text-lg text-slate-300 font-medium">
-            Bridging the gap between fragmented pricing and disconnected legacy systems. 
-            Our layer provides the glue for modern institutional trading.
+          <p className="text-lg text-slate-300 font-medium leading-relaxed">
+            Direct connection to multiple pricing engines and unlimited liquidity 
+            sources at the same time consuming top of book pricing.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ export const PlatformOverview: React.FC = () => {
               { 
                 step: "02", 
                 title: "1FX Engine", 
-                desc: "Middleware aggregating liquidity and risk in sub-10ms cycles.",
+                desc: "Middleware aggregating liquidity and risk in microseconds.",
                 icon: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>,
                 highlight: true 
               },

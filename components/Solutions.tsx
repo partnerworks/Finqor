@@ -17,16 +17,28 @@ const SolutionCard = ({ title, subtitle, bullets, ctaText, icon, colorClass, del
       
       <div className="flex-grow">
         <ul className="space-y-5 mb-10">
-          {bullets.map((bullet: string, i: number) => (
-            <li key={i} className="flex items-start">
-              <div className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
-                <svg className="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span className="text-slate-600 font-medium text-[15px]">{bullet}</span>
-            </li>
-          ))}
+          {bullets.map((bullet: any, i: number) => {
+            const isObject = typeof bullet !== 'string';
+            const text = isObject ? bullet.text : bullet;
+            const tooltip = isObject ? bullet.tooltip : null;
+            
+            return (
+              <li key={i} className="flex items-start group/bullet relative">
+                <div className="w-5 h-5 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                  <svg className="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-slate-600 font-medium text-[15px]">{text}</span>
+                {tooltip && (
+                  <div className="absolute bottom-full left-0 mb-2 w-64 p-3 bg-slate-900 text-white text-[10px] leading-relaxed rounded-xl shadow-2xl opacity-0 invisible group-hover/bullet:opacity-100 group-hover/bullet:visible transition-all duration-300 z-50 pointer-events-none">
+                    {tooltip}
+                    <div className="absolute top-full left-4 border-[6px] border-transparent border-t-slate-900"></div>
+                  </div>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
 
@@ -43,9 +55,9 @@ export const Solutions: React.FC = () => {
     <section id="solutions" className="py-24 bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <div className="text-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-4">The Stack</div>
+          <div className="text-accent font-bold tracking-[0.3em] uppercase text-[10px] mb-4">Execution</div>
           <h2 className="text-4xl font-extrabold text-primary mb-6">Core Enterprise Components</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg">Scalable components engineered for the throughput and complexity of tier-1 institutional banking.</p>
+          <p className="text-slate-500 max-w-2xl mx-auto text-lg">Take advantage of FinQor’s 1FXRM SOR for order management and best execution protocols for risk and post deal management.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -59,7 +71,10 @@ export const Solutions: React.FC = () => {
               "Sub-10ms distribution to all LOB channels",
               "Robust REST APIs for legacy & digital systems",
               "Smart caching for 24 / 7 / 365 quote availability",
-              "Client-specific segmentation and laddering"
+              { 
+                text: "Intelligent Pre & Post deal Smart Decision monitor", 
+                tooltip: "Ensures rules based integrated regulated framework, compliance and other determining factors are part of the trade lifecycle and deal decision making."
+              }
             ]}
             ctaText="Request Technical Spec"
           />
@@ -74,6 +89,7 @@ export const Solutions: React.FC = () => {
               "Seamless API hedge execution via 360T",
               "Configurable automated margin management",
               "Deep liquidity provider routing logic",
+              "Smart Order Routing",
               "Instant reconciliation & audit-ready reporting"
             ]}
             ctaText="Schedule Demo"
