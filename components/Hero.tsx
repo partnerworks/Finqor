@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-primary leading-[1.1] mb-6 max-w-5xl tracking-tight text-left md:text-center">
             One platform. Every asset. <br className="hidden md:block" />
-            <span className="text-accent relative">Real-time decisioning at scale</span>
+            <span className="text-accent">Real-time decisioning at scale</span>
           </h1>
           
           <p className="text-lg md:text-xl text-slate-500 mb-10 max-w-3xl leading-relaxed font-medium">
